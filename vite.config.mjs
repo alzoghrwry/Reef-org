@@ -4,6 +4,7 @@ import { fileURLToPath, URL } from 'node:url'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
+  base: '/Reef-org/',
   plugins: [vue(), tailwindcss()],
   resolve: {
     alias: {
