@@ -1,0 +1,32 @@
+{
+  "name": "reef-website",
+  "version": "1.0.0",
+  "description": "Reef Development - Website",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+    "format": "prettier --write \"src/**/*.{js,vue,json,css,md}\"",
+    "deploy": "npm run build && gh-pages -d dist",
+    "deploy-manual": "powershell -ExecutionPolicy Bypass -File update-pages.ps1",
+    "update-site": "npm run build && git checkout gh-pages && git rm -rf . && cp -r dist/* . && git add . && git commit -m \"Update website: $(date)\" && git push origin gh-pages && git checkout main",
+    "clean": "rm -rf dist node_modules/.vite",
+    "clean:all": "rm -rf dist node_modules package-lock.json && npm install"
+  },
+  "dependencies": {
+    "@vueuse/core": "^10.4.1",
+    "tailwindcss": "^4.1.16",
+    "vue": "^3.4.0",
+    "vue-countup": "^0.1.0",
+    "vue-router": "^4.2.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.16",
+    "@vitejs/plugin-vue": "^4.6.2",
+    "autoprefixer": "^10.4.21",
+    "gh-pages": "^6.1.1",
+    "postcss": "^8.5.6",
+    "vite": "^5.0.0"
+  }
+}
