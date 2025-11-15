@@ -36,7 +36,7 @@ const routes = [
 // إنشاء الراوتر مرة واحدة
 export function createAppRouter() {
   const router = createRouter({
-    history: createWebHistory(),
+    history: createWebHistory('/Reef-org/'),
     routes,
     scrollBehavior(to, from, savedPosition) {
       return savedPosition || { top: 0, behavior: 'smooth' }
